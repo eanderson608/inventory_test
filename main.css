@@ -1,4 +1,6 @@
-
+@font-face {
+    font-family: HouseScript; src: url('SignPainter-HouseScript.TTF');
+}
 
 .container {
     opacity: .5;
@@ -8,7 +10,7 @@
     bottom: 0px;
     margin: 0 auto;
     position: relative;
-    /* background-color: #000066; */
+    background-color: #000066;
 }
 .menu-container {
     width: 21%;
@@ -17,7 +19,17 @@
 }
 
 .inventory-table-wrapper {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+}
 
+.inventory-table-wrapper p {
+    margin: 15px;
+    font-family: HouseScript;
+    font-size: 30pt;
+    color: white;
+    text-shadow: 5px 5px 3px #888888;
 }
 
 .inventory-table {
@@ -27,6 +39,9 @@
     position: relative;
     background-color: white;
     vertical-align: bottom;
+    border: 1px solid black;
+    box-shadow: 5px 5px 3px #888888;
+
 
 }
 
@@ -36,6 +51,25 @@
     height: 50px;
     width: 50px;
     border: 1px solid black;
+    background-color: #000066;
+}
+
+.inventory-item {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    font-size: 10pt;
+}
+
+.action-button {
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+
 }
 
 #player-inventory-container {
@@ -51,6 +85,7 @@
 
 #main-action-button-container {
     position: absolute;
+    width: 40%;
     top: 50%;
     left: 30%;
 }
