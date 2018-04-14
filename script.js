@@ -1,12 +1,21 @@
 window.onload = function() {
 
-    for (var i = 0; i < 5; i++) {
-        var cell = document.createElement("div");
-        cell.classList.add('inventory-cell');
-        cell.setAttribute('ondrop', 'drop(event)');
-        cell.setAttribute('ondragover', 'allowDrop(event)')
-        cell.id = 'cell' + i
-        document.getElementById("inventory-table").appendChild(cell);
+    document.getElementById('secondary-player-inventory-table').style.visibility = 'hidden';
+    document.getElementById('secondary-selected-inventory-table').style.visibility = 'hidden';
+
+    var inventoryTables = document.getElementsByClassName("inventory-table");
+
+    for (var i = 0; i < inventoryTables.length; i++) {
+
+        for (var j = 0; j < 20; j++) {
+            var cell = document.createElement("div");
+            cell.classList.add('inventory-cell');
+            cell.setAttribute('ondrop', 'drop(event)');
+            cell.setAttribute('ondragover', 'allowDrop(event)')
+            cell.id = 'cell' + j
+
+            inventoryTables[i].appendChild(cell);
+        }
     }
 }
 
@@ -15,7 +24,7 @@ function addItem(type, count) {
 
     for (var i = 0; i < cells.length; i++) {
 
-        if (cells[i].firstChild == null) {
+        if (cells[i].firstChild == null && cells[i].parentNode.style.visibility != 'hidden') {
 
             var item = document.createElement('div');
             item.setAttribute('data-item-type', type);
