@@ -1,8 +1,5 @@
 window.onload = function() {
 
-    document.getElementById('secondary-player-inventory-table').style.visibility = 'hidden';
-    document.getElementById('secondary-selected-inventory-table').style.visibility = 'hidden';
-
     var inventoryTables = document.getElementsByClassName("inventory-table");
 
     for (var i = 0; i < inventoryTables.length; i++) {
@@ -20,6 +17,7 @@ window.onload = function() {
 }
 
 function addItem(type, count) {
+    console.log('addItem');
     var cells = document.getElementsByClassName("inventory-cell");
 
     for (var i = 0; i < cells.length; i++) {
